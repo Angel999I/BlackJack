@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{85D102DC-5637-45AF-9A08-1B42C6E945A3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BlackJack</RootNamespace>
+    <AssemblyName>BlackJack</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Card.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assests\SoundFX\Menu Selection.wav" />
+    <Resource Include="Assests\Cards\10 Club Black.png" />
+    <Resource Include="Assests\Cards\10 Diamond Red.png" />
+    <Resource Include="Assests\Cards\10 Heart Red.png" />
+    <Resource Include="Assests\Cards\10 Spade Black.png" />
+    <Resource Include="Assests\Cards\2 Club Black.png" />
+    <Resource Include="Assests\Cards\2 Diamond Red.png" />
+    <Resource Include="Assests\Cards\2 Heart Red.png" />
+    <Resource Include="Assests\Cards\2 Spade Black.png" />
+    <Resource Include="Assests\Cards\3 Club Black.png" />
+    <Resource Include="Assests\Cards\3 Diamond Red.png" />
+    <Resource Include="Assests\Cards\3 Heart Red.png" />
+    <Resource Include="Assests\Cards\3 Spade Black.png" />
+    <Resource Include="Assests\Cards\4 Club Black.png" />
+    <Resource Include="Assests\Cards\4 Diamond Red.png" />
+    <Resource Include="Assests\Cards\4 Heart Red.png" />
+    <Resource Include="Assests\Cards\4 Spade Black.png" />
+    <Resource Include="Assests\Cards\5 Club Black.png" />
+    <Resource Include="Assests\Cards\5 Diamond Red.png" />
+    <Resource Include="Assests\Cards\5 Heart Red.png" />
+    <Resource Include="Assests\Cards\5 Spade Black.png" />
+    <Resource Include="Assests\Cards\6 Club Black.png" />
+    <Resource Include="Assests\Cards\6 Diamond Red.png" />
+    <Resource Include="Assests\Cards\6 Heart Red.png" />
+    <Resource Include="Assests\Cards\6 Spade Black.png" />
+    <Resource Include="Assests\Cards\7 Club Black.png" />
+    <Resource Include="Assests\Cards\7 Diamond Red.png" />
+    <Resource Include="Assests\Cards\7 Heart Red.png" />
+    <Resource Include="Assests\Cards\7 Spade Black.png" />
+    <Resource Include="Assests\Cards\8 Club Black.png" />
+    <Resource Include="Assests\Cards\8 Diamond Red.png" />
+    <Resource Include="Assests\Cards\8 Heart Red.png" />
+    <Resource Include="Assests\Cards\8 Spade Black.png" />
+    <Resource Include="Assests\Cards\9 Club Black.png" />
+    <Resource Include="Assests\Cards\9 Diamond Red.png" />
+    <Resource Include="Assests\Cards\9 Heart Red.png" />
+    <Resource Include="Assests\Cards\9 Spade Black.png" />
+    <Resource Include="Assests\Cards\Ace Club Black.png" />
+    <Resource Include="Assests\Cards\Ace Diamond Red.png" />
+    <Resource Include="Assests\Cards\Ace Heart Red.png" />
+    <Resource Include="Assests\Cards\Ace Spade Black.png" />
+    <Content Include="Assests\Cards\Deck of cards vector.svg" />
+    <Resource Include="Assests\Cards\Jack Club Black.png" />
+    <Resource Include="Assests\Cards\Jack Diamond Red.png" />
+    <Resource Include="Assests\Cards\Jack Heart Red.png" />
+    <Resource Include="Assests\Cards\Jack Spade Black.png" />
+    <Resource Include="Assests\Cards\King Club Black.png" />
+    <Resource Include="Assests\Cards\King Diamond Red.png" />
+    <Resource Include="Assests\Cards\King Heart Red.png" />
+    <Resource Include="Assests\Cards\King Spade Black.png" />
+    <Resource Include="Assests\Cards\Original Deck Of Cards.png" />
+    <Resource Include="Assests\Cards\Queen Club Black.png" />
+    <Resource Include="Assests\Cards\Queen Diamond Red.png" />
+    <Resource Include="Assests\Cards\Queen Heart Red.png" />
+    <Resource Include="Assests\Cards\Queen Spade Black.png" />
+    <Resource Include="Assests\Cards\_Card Back Blue.png" />
+    <Resource Include="Assests\Icon.png" />
+    <Resource Include="Assests\MainBackground.jpg" />
+    <Content Include="Assests\SoundFX\Card Flip.wav" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

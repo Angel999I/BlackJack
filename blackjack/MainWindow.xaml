@@ -1,0 +1,111 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BlackJack"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" xmlns:thriple="http://thriple.codeplex.com/" x:Class="BlackJack.MainWindow"
+        mc:Ignorable="d"
+        Title="BlackJack" Height="800" Width="1200" ShowInTaskbar="False" ResizeMode="NoResize" WindowStyle="SingleBorderWindow" Icon="Assests/Icon.png" >
+    <Window.Resources>
+        <Storyboard x:Key="MainMenuCardAnimation">
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="cardKing">
+                <EasingThicknessKeyFrame KeyTime="0:0:0.7" Value="400,169.6,0,0"/>
+            </ThicknessAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="cardKing">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="199.5"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="cardKing">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-1.2"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Margin)" Storyboard.TargetName="cardAce">
+                <EasingThicknessKeyFrame KeyTime="0:0:0.7" Value="-300,169.6,-74.4,0"/>
+            </ThicknessAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="cardAce">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="152.4"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="cardAce">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-1.2"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="GridFade">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="grid">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="label_title">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.7" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="label_bet">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.7" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="label_start">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.7" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="label_about">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.7" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="label_exit">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.7" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="cardKing">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.7" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="cardAce">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.7" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource MainMenuCardAnimation}"/>
+        </EventTrigger>
+    </Window.Triggers>
+    <Window.Background>
+        <ImageBrush ImageSource="Assests/MainBackground.jpg"/>
+    </Window.Background>
+    <Grid x:Name="grid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="527*"/>
+            <ColumnDefinition Width="135*"/>
+            <ColumnDefinition Width="531*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150*"/>
+            <RowDefinition Height="47*"/>
+            <RowDefinition Height="56*"/>
+            <RowDefinition Height="62*"/>
+            <RowDefinition Height="62*"/>
+            <RowDefinition Height="62*"/>
+            <RowDefinition Height="318*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="label_title" Content="      &#xA;Black Jack" Foreground="White" FontFamily="Franklin Gothic Heavy" FontSize="64" HorizontalContentAlignment="Center" Margin="0,0,-0.4,45.8" Grid.RowSpan="2" Grid.ColumnSpan="3"/>
+        <Label x:Name="label_bet" Grid.Row="1" Content="PAYS 2 TO 1" Foreground="#FFFDB800" FontSize="26" HorizontalContentAlignment="Center" FontWeight="Bold" Margin="0,0.2,-0.4,55.8" Grid.RowSpan="2" Grid.ColumnSpan="3"/>
+        <Label x:Name="label_start" Content="Start" Grid.Row="3" HorizontalContentAlignment="Center" FontSize="36" Foreground="#FFFDFDFD" FontWeight="Bold" Grid.Column="1" MouseEnter="menuLabels_MouseEnter" MouseLeave="menuLabels_MouseLeave" MouseLeftButtonUp="start_label_MouseLeftButtonUp"/>
+        <Label x:Name="label_about" Content="About" HorizontalContentAlignment="Center" Foreground="White" FontSize="36" FontWeight ="Bold"  Grid.Row="4" Grid.Column="1" MouseEnter="menuLabels_MouseEnter" MouseLeave="menuLabels_MouseLeave" MouseLeftButtonUp="label_about_MouseLeftButtonUp"/>
+        <Label x:Name="label_exit" Content="Exit" HorizontalContentAlignment="Center" Foreground="White" FontSize="36" FontWeight ="Bold"  Grid.Row="5" Grid.Column="1" MouseEnter="menuLabels_MouseEnter" MouseLeave="menuLabels_MouseLeave" MouseLeftButtonUp="label_exit_MouseLeftButtonUp"/>
+        <Image x:Name="cardKing" HorizontalAlignment="Left" Height="154" Margin="-87,169.6,0,0" Grid.Row="6" VerticalAlignment="Top" Width="102" Source="Assests/Cards/_Card Back Blue.png" Stretch="Fill" MouseLeftButtonDown="cardKing_MouseLeftButtonDown" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Image x:Name="cardAce" HorizontalAlignment="Left" Height="154" Margin="503.6,169.6,-74.4,0" Grid.Row="6" VerticalAlignment="Top" Width="102" Source="Assests/Cards/_Card Back Blue.png" MouseLeftButtonDown="cardAce_MouseLeftButtonDown" Stretch="Fill" Grid.Column="2" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <Canvas x:Name="canvas" HorizontalAlignment="Left" Height="770" VerticalAlignment="Top" Width="1194" Grid.ColumnSpan="3" Margin="0,0,0,0" Grid.RowSpan="7">
+            <Label Canvas.Left="281" Canvas.Top="559"/>
+        </Canvas>
+    </Grid>
+</Window>
